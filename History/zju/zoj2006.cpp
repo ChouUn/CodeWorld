@@ -2,7 +2,7 @@
 #include <csl_std.h>
 
 /*
- *  Name : zoj2006.cpp
+ *  Name : zju2006.cpp
  *  Date : 2015年9月17日 上午11:47:07
  *  Copyright : fateud.com
  *  Anti-Mage : The magic ends here.

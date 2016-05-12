@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3497.cpp
+ *	Name : zju3497.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ23ÈÕ ÏÂÎç6:27:10
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½23ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½6:27:10
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -16,7 +16,7 @@ using namespace std;
 #define REP(i,n)    for(int _t=n,i=0;i<_t;i++)
 template <typename _Tp, size_t _Sz>
 class Matrix {
-  // Name : Matrix ¾ØÕó
+  // Name : Matrix ï¿½ï¿½ï¿½ï¿½
   // Copyright : www.fateud.com
 public  :
   typedef Matrix<_Tp, _Sz>        _Self;

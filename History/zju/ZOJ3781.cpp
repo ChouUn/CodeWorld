@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3781.cpp
+ *	Name : zju3781.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ23ÈÕ ÏÂÎç4:31:14
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½23ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:31:14
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None

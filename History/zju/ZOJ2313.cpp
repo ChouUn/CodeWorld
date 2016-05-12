@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ2313.cpp
+ *	Name : zju2313.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015дЙ5тб3ху обнГ7:07:39
+ *	Date : 2015О©╫О©╫5О©╫О©╫3О©╫О©╫ О©╫О©╫О©╫О©╫7:07:39
  *	Copyright : www.fateud.com
  *	Description : None
  */

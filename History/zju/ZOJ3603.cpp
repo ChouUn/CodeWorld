@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3603.cpp
+ *	Name : zju3603.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ23ÈÕ ÏÂÎç4:11:35
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½23ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:11:35
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None

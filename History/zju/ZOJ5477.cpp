@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ5477.cpp
+ *	Name : zju5477.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ15ÈÕ ÏÂÎç9:31:26
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½15ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:31:26
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None

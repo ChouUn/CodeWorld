@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3869.cpp
+ *	Name : zju3869.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ25ÈÕ ÏÂÎç10:37:23
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½25ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½10:37:23
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None

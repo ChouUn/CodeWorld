@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3872.cpp
+ *	Name : zju3872.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ25ÈÕ ÏÂÎç10:47:34
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½25ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½10:47:34
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None

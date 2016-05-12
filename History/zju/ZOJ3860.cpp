@@ -1,7 +1,7 @@
 /*
- *	Name : ZOJ3860.cpp
+ *	Name : zju3860.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ14ÈÕ ÏÂÎç5:10:06
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½5:10:06
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
