@@ -35,7 +35,7 @@ int main() {
     if (mm < m || m < 0) { cout << "No" << endl; continue; }
     bs.reset(), bs[0] = true;
     for (auto &ai : a)
-      rrep(i, 0, m-ai+1) bs[i+ai] = bs[i+ai] | bs[i];
+      per(i, 0, m-ai+1) bs[i+ai] = bs[i+ai] | bs[i];
     cout << (bs[m] ? "Yes" : "No") << endl;
   }
   return 0;

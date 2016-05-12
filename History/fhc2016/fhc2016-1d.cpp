@@ -2,7 +2,7 @@
 #include <csl_std.h>
 
 /**
- *  Name : fbhc2016-1d.cpp
+ *  Name : fhc2016-1d.cpp
  *  Date : 2016年1月9日 下午1:48:57
  *  Copyright : fateud.com
  *  Anti-Mage : The magic ends here.
@@ -33,7 +33,7 @@ void dfs(int u) {
     int v = g[u].s[i];
     if(!v) continue;
     dfs(v);
-    rrep(p, 0, k + 1) rep(q, 0, p + 1) {
+    per(p, 0, k + 1) rep(q, 0, p + 1) {
       f[u][p] = min(f[u][p], f[v][q] + f[u][p - q] + 2);
     }
   }

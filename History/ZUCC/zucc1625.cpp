@@ -17,7 +17,7 @@ int p[N][3], f[N][M][M][M];
 //@ Main Function
 int main() {
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(0);
+  std::cin.tie(nullptr);
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ << ": ";
@@ -25,7 +25,7 @@ int main() {
 
     memset(p, 0x00, sizeof p);
     rep(k, 0, 3) p[n][k] = n;
-    rrep(i, 0, n) {
+    per(i, 0, n) {
       rep(k, 0, 3) p[i][k] = p[i+1][k];
       p[i][s[i]-'a'] = i;
     }

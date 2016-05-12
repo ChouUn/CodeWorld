@@ -1,7 +1,7 @@
 /*
  *	Name : BC34A.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê3ÔÂ21ÈÕ ÏÂÎç7:00:34
+ *	Date : 2015ï¿½ï¿½3ï¿½ï¿½21ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½7:00:34
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -98,7 +98,7 @@ using namespace std;
 			i=0;\
 			i<_t;\
 			i++)
-#define RREP(i,n)\
+#define per(i,n)\
 	for(int i=n-1;\
 			i>=0;\
 			i--)

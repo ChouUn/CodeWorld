@@ -36,7 +36,7 @@ int main() {
   fac[0] = 1;
   rep(i, 1, maxn) fac[i] = fac[i-1] * i % mod;
   inv[maxn-1] = csl::inv(fac[maxn-1], (ll)mod);
-  rrep(i, 1, maxn) inv[i-1] = inv[i] * i % mod;
+  per(i, 1, maxn) inv[i-1] = inv[i] * i % mod;
 
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(nullptr);

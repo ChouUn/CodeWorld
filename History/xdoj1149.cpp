@@ -3,7 +3,7 @@
 #include <csl_math.h>
 
 /**
- *  Name : xdojc1022p11.cpp
+ *  Name : xdoj1149.cpp
  *  Date : 2016年4月18日 下午5:36:45
  *  Copyright : fateud.com
  *  Anti-Mage : The magic ends here.
@@ -19,7 +19,7 @@ int main() {
   fac[0] = 1;
   rep(i, 1, M) fac[i] = fac[i - 1] * i % P;
   inv[M - 1] = csl::inv(fac[M - 1], (ll)P);
-  rrep(i, 1, M) inv[i - 1] = inv[i] * i % P;
+  per(i, 1, M) inv[i - 1] = inv[i] * i % P;
   assert(inv[1] == 1);
 
   std::ios_base::sync_with_stdio(false);

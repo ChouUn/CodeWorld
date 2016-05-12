@@ -2,5 +2,4 @@
 /Debug/*
 .cproject
 .project
-.gitignore
 hexo_code_copy.bat

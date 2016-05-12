@@ -14,7 +14,11 @@ typedef std::vector<int> vi;
 typedef std::vector<vi> vvi;
 typedef std::vector<pii> vpii;
 
+template<class T1, class T2>
+inline std::istream& operator >> (std::istream& in, std::pair<T1,T2>& a)
+{ return in >> a.first >> a.second; }
+
 #define rep(i,a,b) for(auto i=a,i##_n=b;i<i##_n;++i)
-#define rrep(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
+#define per(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
 
 #endif /* CSL_STD_H_ */

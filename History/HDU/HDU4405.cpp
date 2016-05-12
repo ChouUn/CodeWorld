@@ -1,7 +1,7 @@
 /*
  *    Name : HDU4405.cpp
  *    Author : CHN.ChouUn
- *    Date : 2015Äê3ÔÂ18ÈÕ ÏÂÎç7:48:40
+ *    Date : 2015ï¿½ï¿½3ï¿½ï¿½18ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½7:48:40
  *    Copyright : www.fateud.com
  *    Email : ChouUnSoft@gmail.com
  *    Description : None
@@ -21,7 +21,7 @@ int main() {
         while (m--) { int x, y; scanf("%d%d", &x, &y); g[x] = y; }
 
         CLEAR(f, 0x00);
-        RREP (i, n) {
+        per (i, n) {
             if (g[i] > -1)
                 f[i] = f[g[i]];
             else {

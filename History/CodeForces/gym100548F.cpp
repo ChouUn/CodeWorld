@@ -1,7 +1,7 @@
 /*
  *	Name : gym100548F.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ7ÈÕ ÏÂÎç6:45:35
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½7ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½6:45:35
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -19,7 +19,7 @@ using namespace std;
 //@ Macro Loop Define
 #define FOR(i,m,n)	for(int _s=m, _t=n+1-2*((n)<(m)), _d=1-2*((n)<(m)), i=_s; i!=_t; i+=_d)
 #define REP(i,n)	for(int _t=n, i=0; i<_t; i+=1)
-#define RREP(i,n)	for(int i=n-1; i>=0; i-=1)
+#define per(i,n)	for(int i=n-1; i>=0; i-=1)
 //@ Faster Input
 typedef long long Int64;
 inline int getint() {

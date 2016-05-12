@@ -31,7 +31,7 @@ typedef unsigned long long  ull;
 #define i64         "%lld"
 #endif
 #define rep(i,a,n)  for (int i=a;i<n;++i)
-#define rrep(i,a,n) for (int i=n-1;i>=a;--i)
+#define per(i,a,n) for (int i=n-1;i>=a;--i)
 #define trv(i,n)    for (__typeof((n).end()) i=(n).begin();i!=(n).end();++i)
 #define fi      first
 #define se      second

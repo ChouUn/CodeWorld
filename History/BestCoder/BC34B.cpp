@@ -1,7 +1,7 @@
 /*
  *	Name : BC34B.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê3ÔÂ21ÈÕ ÏÂÎç7:19:46
+ *	Date : 2015ï¿½ï¿½3ï¿½ï¿½21ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½7:19:46
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -77,7 +77,7 @@ using namespace std;
 #define CLEAR(x,c)	memset(x,c,sizeof(x))
 #define FOR(i,m,n)	for(int _s=(m),_t=(n)+1-2*((n)<(m)),_d=1-2*((n)<(m)),i=_s;i!=_t;i=i+_d)
 #define REP(i,n)	for(int _t=n,i=0;i<_t;i++)
-#define RREP(i,n)	for(int i=n-1;i>=0;i--)
+#define per(i,n)	for(int i=n-1;i>=0;i--)
 #define TRV(i,n)	for(tp(n) i=(n).op;i!=(n).ed;i++)
 #define RTRV(i,n)	for(rtp(n) i=(n).rop;i!=(n).red;i++)
 //@ 64 Bit Integer for win/unix

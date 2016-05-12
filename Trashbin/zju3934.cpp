@@ -37,7 +37,7 @@ inline void update(int& x, int y, bool& flag)
 int d[K];
 
 void split(int x, int k)
-{ rrep(i, 0, k) d[i] = x % 10, x /= 10; }
+{ per(i, 0, k) d[i] = x % 10, x /= 10; }
 
 int relabel(int k) {
   static int e[K], en, res;

@@ -34,7 +34,7 @@ int main() {
     fac[0] = 1;
     rep(i, 1, p) fac[i] = fac[i-1] * i % p;
     inv[p-1] = csl::pow(ll(1), fac[p-1], p-2, ll(p));
-    rrep(i, 1, p) inv[i-1] = inv[i] * i % p;
+    per(i, 1, p) inv[i-1] = inv[i] * i % p;
 
     cout << lucas(n + m, m, p) << endl;
   }

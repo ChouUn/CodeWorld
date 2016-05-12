@@ -3,23 +3,21 @@
 
 /**
  *  Name : hdu1520.cpp
- *  Date : 2016年3月23日 下午6:49:30
+ *  Date : 2016年5月13日 上午3:58:16
  *  Copyright : fateud.com
  *  Anti-Mage : The magic ends here.
  */
 
-#define N 6010
-int w[N], d[N];
+const int N = 6010;
 vi g[N];
-int f[N][2];
+int d[N], v[N], dp[N][2];
 
 void dfs(int u) {
-  f[u][0] = 0;
-  f[u][1] = w[u];
+  dp[u][0] = 0, dp[u][1] = v[u];
   for (auto &v : g[u]) {
     dfs(v);
-    f[u][0] += max(f[v][0], f[v][1]);
-    f[u][1] += f[v][0];
+    dp[u][0] += max(dp[v][0], dp[v][1]);
+    dp[u][1] += dp[v][0];
   }
 }
 
@@ -30,13 +28,12 @@ int main() {
   int _, __ = 1;
   for(int n; cin >> n; --_, ++__) {
     //std::cout << "Case #" << __ << ": ";
-    rep(i, 0, n) cin >> w[i], d[i] = 0, g[i].clear();
-    for (int x, y; cin >> x >> y, x && y; ) g[--y].push_back(--x), ++d[x];
+    rep(i, 1, n + 1) g[i].clear(), d[i] = 0;
+    rep(i, 1, n + 1) cin >> v[i];
+    for (int x, y; cin >> x >> y && x && y; ) g[y].push_back(x), ++d[x];
+
     int ans = 0;
-    rep(i, 0, n) if (!d[i]) {
-      dfs(i);
-      ans += max(f[i][0], f[i][1]);
-    }
+    rep(i, 1, n + 1) if (!d[i]) dfs(i), ans += max(dp[i][0], dp[i][1]);
     cout << ans << endl;
   }
   return 0;

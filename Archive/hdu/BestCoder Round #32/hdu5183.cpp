@@ -27,7 +27,7 @@ int main() {
 
     set<ll> ht;
     bool ans = false;
-    rrep(i, 0, n+1) {
+    per(i, 0, n+1) {
       ll x = s[i] + (i&1 ? -k : k);
       if(ht.count(x)) { ans = true; break; }
       ht.insert(s[i]);

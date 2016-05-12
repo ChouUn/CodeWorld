@@ -1,7 +1,7 @@
 /*
  *	Name : CF521A.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê3ÔÂ2ÈÕ ÏÂÎç2:53:05
+ *	Date : 2015ï¿½ï¿½3ï¿½ï¿½2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½2:53:05
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -74,7 +74,7 @@ using namespace std;
 #define CLEAR(x,c)	memset(x,c,sizeof(x))
 #define FOR(i,m,n)	for(int _s=(m),_t=(n)+1-2*((n)<(m)),_d=1-2*((n)<(m)),i=_s;i!=_t;i=i+_d)
 #define REP(i,n)	for(int _t=n,i=0;i<_t;i++)
-#define RREP(i,n)	for(int i=n-1;i>=0;i--)
+#define per(i,n)	for(int i=n-1;i>=0;i--)
 #define TRV(i,n)	for(tp(n) i=(n).op;i!=(n).ed;i++)
 #define RTRV(i,n)	for(rtp(n) i=(n).rop;i!=(n).red;i++)
 //@ 64 Bit Integer for win/unix
@@ -107,7 +107,7 @@ template<typename _Tp> bool exmin(_Tp &a, const _Tp b) { return (b < a) ? ((a = 
 
 template <uInt64 _Key = 1000000007ull>
 class ModInt {
-// Name : ModInt 64Î»ÎÞ·ûºÅ×ÔÈ¡Ä£ÕûÐÍ
+// Name : ModInt 64Î»ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ä£ï¿½ï¿½ï¿½ï¿½
 // Copyright : www.fateud.com
 public	:
 	typedef ModInt<_Key>		_Self;

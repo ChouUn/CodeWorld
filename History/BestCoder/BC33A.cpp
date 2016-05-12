@@ -1,14 +1,14 @@
 /*
  *	Name : BC33A.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê3ÔÂ14ÈÕ ÏÂÎç7:01:58
+ *	Date : 2015ï¿½ï¿½3ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½7:01:58
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
  */
 
 /*
- *	Name : standard.h Ö½Å©¤Î±ê×¼¿â
+ *	Name : standard.h Ö½Å©ï¿½Î±ï¿½×¼ï¿½ï¿½
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -83,7 +83,7 @@ using namespace std;
 #define CLEAR(x,c)	memset(x,c,sizeof(x))
 #define FOR(i,m,n)	for(int _s=(m),_t=(n)+1-2*((n)<(m)),_d=1-2*((n)<(m)),i=_s;i!=_t;i=i+_d)
 #define REP(i,n)	for(int _t=n,i=0;i<_t;i++)
-#define RREP(i,n)	for(int i=n-1;i>=0;i--)
+#define per(i,n)	for(int i=n-1;i>=0;i--)
 #define TRV(i,n)	for(tp(n) i=(n).op;i!=(n).ed;i++)
 #define RTRV(i,n)	for(rtp(n) i=(n).rop;i!=(n).red;i++)
 //@ 64 Bit Integer for win/unix
@@ -124,7 +124,7 @@ int main() {
 		while (n--) {
 			scanf("%s", s);
 			int l = strlen(s);
-			RREP(i, l) {
+			per(i, l) {
 				if (s[i] <= '9')
 					num[l - i - 1] = s[i] - '0';
 				else
@@ -137,7 +137,7 @@ int main() {
 			exmax(maxl, l);
 		}
 		bool ok = 0;
-		RREP(i, maxl) {
+		per(i, maxl) {
 			if ((!ok) && (!ans[i])) continue; ok = true;
 			if (ans[i] <= 9)
 				printf("%d", ans[i]);

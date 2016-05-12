@@ -17,7 +17,7 @@ typedef unsigned long long  ull;
 #define i64         "%lld"
 #endif /* _WIN32 */
 #define rep(i,a,n)  for (int i=a;i<n;++i)
-#define rrep(i,a,n) for (int i=n-1;i>=a;--i)
+#define per(i,a,n) for (int i=n-1;i>=a;--i)
 #endif /* CSL_STD_H_ */
 
 

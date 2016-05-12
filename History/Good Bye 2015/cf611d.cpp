@@ -27,7 +27,7 @@ int main() {
   std::cin.tie(nullptr);
 
   cin >> n >> s;
-  rrep(i, 0, n) rrep(j, 0, n) {
+  per(i, 0, n) per(j, 0, n) {
     g[i][j] = (s[i] == s[j]) ? (g[i+1][j+1] + 1) : 0;
   }
 

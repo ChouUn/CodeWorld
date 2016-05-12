@@ -1,7 +1,7 @@
 /*
  *	Name : zucc1511.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê3ÔÂ26ÈÕ ÏÂÎç3:30:02
+ *	Date : 2015ï¿½ï¿½3ï¿½ï¿½26ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½3:30:02
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -9,18 +9,18 @@
 
 //@ Including Header
 /*
- *	Name : ChouUn's Standard Library Ö½Å©¤Î±ê×¼¿â
+ *	Name : ChouUn's Standard Library Ö½Å©ï¿½Î±ï¿½×¼ï¿½ï¿½
  *	Copyright : www.fateud.com
  *
- *	ÒÔÏÂ¹¦ÄÜÄ¬ÈÏ²»¿ªÆô, ÈçÓĞ±ØÒªÔòÔÚ#includeÇ°ÉùÃ÷
+ *	ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½Ä¬ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ğ±ï¿½Òªï¿½ï¿½ï¿½ï¿½#includeÇ°ï¿½ï¿½ï¿½ï¿½
  *	#define CSL_STD_CONTAINER
- *		ÈİÆ÷¹¦ÄÜ, °üº¬±ã½İµÄºê¶¨Òå
+ *		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İµÄºê¶¨ï¿½ï¿½
  *	#define CSL_STD_DEBUG
- *		µ÷ÊÔ¹¦ÄÜ, Ö§³Ö³ÌĞòÔİÍ£¡¢¼ÙÉè±äÁ¿ºÍ¿ìËÙÊä³ö
+ *		ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½, Ö§ï¿½Ö³ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *	#define CSL_STD_MATH
- *		ÊıÑ§¹¦ÄÜ, Ö§³Ö¸´ÔÓÀàĞÍºÍÎ»ÀàĞÍÒÔ¼°Ä£°å»¯ÔËËã
+ *		ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½, Ö§ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ä£ï¿½å»¯ï¿½ï¿½ï¿½ï¿½
  *	#define CSL_STD_FASTIO
- *		×÷±×¹¦ÄÜ, Ö§³ÖÀ´×ÔÇå»ªµÄ¿ìËÙÊäÈëÊä³öÄ£¿é
+ *		ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½, Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å»ªï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
  */
 
 #define _TEMPLATE_CSL_VERSION 20150325C
@@ -137,7 +137,7 @@ namespace csl
 				i < __t;\
 				i += 1)
 
-	#define RREP(i,n)\
+	#define per(i,n)\
 		for(int i = n - 1;\
 				i >= 0;\
 				i -= 1)
@@ -158,7 +158,7 @@ namespace csl
 #ifdef CSL_STD_FASTIO
 	class _fastio
 	{
-	// Name : Faster Input/Output ¿ìËÙÊäÈëÊä³ö
+	// Name : Faster Input/Output ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// Copyright : www.fateud.com, Thanks for deskmate ZRC's help (from THU)
 	private	:
 		const static size_t _size = 1 << 18;

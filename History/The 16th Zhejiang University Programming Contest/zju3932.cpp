@@ -19,7 +19,7 @@ int main() {
 	  vi a(n); rep(i, 0, n) cin >> a[i];
 
 	  int sum = 0, ans = 0;
-	  rrep(i, 0, n) {
+	  per(i, 0, n) {
 	    ans = max(ans, sum + a[i]);
 	    sum += a[i] > 0;
 	  }

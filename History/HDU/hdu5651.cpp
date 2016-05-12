@@ -18,7 +18,7 @@ int main() {
   fac[0] = 1;
   rep(i, 1, N) fac[i] = fac[i-1] * i % P;
   inv[N-1] = csl::pow(ll(1), fac[N-1], P - 2, ll(P));
-  rrep(i, 1, N) inv[i-1] = inv[i] * i % P;
+  per(i, 1, N) inv[i-1] = inv[i] * i % P;
 
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(nullptr);

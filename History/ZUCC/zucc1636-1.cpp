@@ -15,7 +15,7 @@ typedef std::vector<vi> vvi;
 typedef std::vector<pii> vpii;
 
 #define rep(i,a,b) for(auto i=a,i##_n=b;i<i##_n;++i)
-#define rrep(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
+#define per(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
 
 #endif /* CSL_STD_H_ */
 
@@ -178,11 +178,11 @@ int main() {
   fac[0] = 1;
   rep(i, 1, M+N+1) fac[i] = fac[i-1] * i % P;
   inv[M+N] = csl::pow(ll(1), fac[M+N], P-2, ll(P));
-  rrep(i, 1, M+N+1) inv[i-1] = inv[i] * i % P;
+  per(i, 1, M+N+1) inv[i-1] = inv[i] * i % P;
   assert(inv[1] == 1);
 
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(0);
+  std::cin.tie(nullptr);
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ << ": ";

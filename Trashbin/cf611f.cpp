@@ -16,7 +16,7 @@ typedef std::vector<vi> vvi;
 typedef std::vector<pii> vpii;
 
 #define rep(i,a,b) for(auto i=a,i##_n=b;i<i##_n;++i)
-#define rrep(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
+#define per(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
 
 #endif /* CSL_STD_H_ */
 

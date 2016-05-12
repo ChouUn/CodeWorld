@@ -12,7 +12,7 @@ typedef unsigned long long  ull;
 #define i64         "%lld"
 #endif
 #define rep(i,a,n)  for (int i=(a);i<(n);++i)
-#define rrep(i,a,n) for (int i=(n)-1;i>=(a);--i)
+#define per(i,a,n) for (int i=(n)-1;i>=(a);--i)
 #define pb      push_back
 #define mp      make_pair
 #define mod     (1000000007)

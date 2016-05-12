@@ -21,7 +21,7 @@ int main() {
   rep(i, 0, n) u[i+1] = u[i] + v[i];
 
   vi p(7, -1), q(7, -1);
-  rrep(i, 0, n+1) p[u[i]%7] = i;
+  per(i, 0, n+1) p[u[i]%7] = i;
   rep(i, 0, n+1) q[u[i]%7] = i;
 
   int ans = 0;

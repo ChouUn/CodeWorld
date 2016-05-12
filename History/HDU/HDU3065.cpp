@@ -1,7 +1,7 @@
 /*
  *	Name : HDU3065.cpp
  *	Author : CHN.ChouUn
- *	Date : 2015Äê4ÔÂ9ÈÕ ÏÂÎç2:26:54
+ *	Date : 2015ï¿½ï¿½4ï¿½ï¿½9ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½2:26:54
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  *	Description : None
@@ -9,7 +9,7 @@
 
 //@ Including Header
 /*
- *	Name : ChouUn's Standard Library Ö½Å©¤Î±ê×¼¿â
+ *	Name : ChouUn's Standard Library Ö½Å©ï¿½Î±ï¿½×¼ï¿½ï¿½
  *	Copyright : www.fateud.com
  *	Email : ChouUnSoft@gmail.com
  */
@@ -28,7 +28,7 @@
 
 #define FOR(i,m,n)	for(int _s=m, _t=n+1-2*((n)<(m)), _d=1-2*((n)<(m)), i=_s; i!=_t; i+=_d)
 #define REP(i,n)	for(int _t=n, i=0; i<_t; i+=1)
-#define RREP(i,n)	for(int i=n-1; i>=0; i-=1)
+#define per(i,n)	for(int i=n-1; i>=0; i-=1)
 
 typedef long long Int64;
 namespace csl {
@@ -77,7 +77,7 @@ int decode(char word) {
 	return 0;
 }
 
-//@ trie×ÖµäÊ÷
+//@ trieï¿½Öµï¿½ï¿½ï¿½
 namespace trie
 {
 	const static int MAXC = 27;
@@ -107,7 +107,7 @@ namespace trie
 
 } // namespace trie
 
-//@ AC×Ô¶¯»ú¶àÄ£Ê½×Ö·û´®Æ¥ÅäËã·¨
+//@ ACï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½Ö·ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ã·¨
 namespace ACsma
 {
 	struct node :

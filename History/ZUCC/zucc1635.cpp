@@ -15,7 +15,7 @@ typedef std::vector<vi> vvi;
 typedef std::vector<pii> vpii;
 
 #define rep(i,a,b) for(auto i=a,i##_n=b;i<i##_n;++i)
-#define rrep(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
+#define per(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)
 
 #endif /* CSL_STD_H_ */
 
@@ -34,7 +34,7 @@ ll b[M+1], c[M+M+1], s[M+1];
 //@ Main Function
 int main() {
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(0);
+  std::cin.tie(nullptr);
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ << ": ";

@@ -22,7 +22,7 @@ int main() {
     rep(i, 0, n) cin >> a[i];
 
     dp[(1 << n) - 1] = 0;
-    rrep(i, 0, (1 << n) - 1) {
+    per(i, 0, (1 << n) - 1) {
       double m = 0;
       dp[i] = 1;
       rep(k, 0, n) {

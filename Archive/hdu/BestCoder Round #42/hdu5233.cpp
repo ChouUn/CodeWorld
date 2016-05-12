@@ -19,7 +19,7 @@ int main() {
   for(int n, m; cin >> n >> m; --_, ++__) {
     map<int,int> p;
     rep(i, 1, n+1) cin >> tmp[i];
-    rrep(i, 1, n+1) {
+    per(i, 1, n+1) {
       int& ref = p[tmp[i]];
       lnk[i] = ref, ref = i;
     }

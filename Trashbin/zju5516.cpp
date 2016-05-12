@@ -104,7 +104,7 @@ void NTT(ll a[],int n1,ll b[],int n2,ll c[],int &l) {
 //@ Main Function
 int main() {
   fac[0] = 1; rep(i, 1, N) fac[i] = fac[i-1] * i % P;
-  inv[N-1] = pm(fac[N-1], P - 2); rrep(i, 1, N) inv[i-1] = inv[i] * i % P;
+  inv[N-1] = pm(fac[N-1], P - 2); per(i, 1, N) inv[i-1] = inv[i] * i % P;
 
   std::ios_base::sync_with_stdio(false);
   int _, __ = 1;

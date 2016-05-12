@@ -10,9 +10,10 @@
 
 #define N 210
 #define M 210
+typedef pair<int,list<int>> node;
 
 int n, m;
-int a[N], b[N], c[N], d[N], e, l[N];
+int a[N], b[N], c[N];
 vector<int> g[N];
 int f[N][M], h[M];
 
@@ -20,48 +21,46 @@ inline void update(int& x, int y) {
   if (x == -1 || y < x) x = y;
 }
 
-int dfs(int u) {
-  fill(f[u], f[u] + m + 1, -1);
-  f[u][0] = a[u], d[e++] = c[u] - b[u];
-  int *first = d + e, *last = first, cnt = 0;
+node dfs(int u) {
+  node ret;
+  f[u][0] = a[u], fill_n(f[u] + 1, m, -1);
   rep(w, 0u, g[u].size()) {
     int v = g[u][w];
-    cnt += dfs(v);
+    node tmp = dfs(v);
     copy(f[u], f[u] + m + 1, h);
     fill(f[u], f[u] + m + 1, -1);
-    rep(i, 0, m+1) rep(j, 0, i+1)
+    rep(i, 0, m + 1) rep(j, 0, i + 1)
       if (~f[v][j] && ~h[i-j]) update(f[u][i], f[v][j] + h[i-j]);
-    int *r = copy(first, last, l);
-    last = merge(l, r, last, d + e, first);
+    ret.first += tmp.first, ret.second.merge(tmp.second);
   }
-  if (u != n) {
-    int sum = cnt + c[u];
-    update(f[u][1], sum);
-    rep(i, first, last) update(f[u][i-first+2], sum += *i);
+  if (u) {
+    int sum = ret.first + c[u], cnt = 0;
+    update(f[u][++cnt], sum);
+    for (auto i = ret.second.begin(); i != ret.second.end(); ++i)
+      update(f[u][++cnt], sum += *i);
   }
-  rep(i, first, last) if (*(i-1) > *i) swap(*(i-1), *i);
-  return cnt + b[u];
+  return ret.first += b[u], ret.second.merge(list<int>(1, c[u] - b[u])), ret;
 }
 
 //@ Main Function
 int main() {
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(0);
+  std::cin.tie(nullptr);
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ << ": ";
     cin >> n >> m;
-    rep(i, 0, n+1) g[i].clear();
-    rep(i, 0, n) {
-      int p; cin >> p; p = p ? p - 1 : n;
+    rep(i, 0, n + 1) g[i].clear();
+    rep(i, 1, n + 1) {
+      int p; cin >> p;
       cin >> a[i] >> b[i] >> c[i];
       g[p].push_back(i);
       b[i] = min(a[i], b[i]);
     }
 
-    a[n] = b[n] = c[n] = e = 0, dfs(n);
+    a[0] = b[0] = c[0] = 0, dfs(0);
     int ans = -1;
-    rep(i, 0, m+1) if (~f[n][i]) update(ans, f[n][i]);
+    rep(i, 0, m + 1) if (~f[0][i]) update(ans, f[0][i]);
     cout << ans << endl;
   }
   return 0;

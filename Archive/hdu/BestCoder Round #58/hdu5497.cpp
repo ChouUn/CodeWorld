@@ -26,7 +26,7 @@ int main() {
     csl::fenwick_tree<int> g; g.build(n);
 
     ll cnt = 0;
-    rrep(i, m, n) {
+    per(i, m, n) {
       cnt += g.query(a[i] - 1);
       g.update(a[i], +1);
     }

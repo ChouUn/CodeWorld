@@ -16,7 +16,7 @@ typedef unsigned long long  ull;
 #define i64         "%lld"
 #endif /* _WIN32 */
 #define rep(i,a,n)  for (int i=a;i<n;++i)
-#define rrep(i,a,n) for (int i=n-1;i>=a;--i)
+#define per(i,a,n) for (int i=n-1;i>=a;--i)
 #endif /* CSL_STD_H_ */
 
 /*
@@ -38,7 +38,7 @@ int main() {
     memset(c, 0xff, sizeof(c));
     rep(i, 1, n) b[i] = a[i] - a[i-1]; b[n] = maxn;
     c[n-1] = n-1;
-    rrep(i, 1, n-1) c[i] = (b[i] == b[i+1]) ? c[i+1] : i;
+    per(i, 1, n-1) c[i] = (b[i] == b[i+1]) ? c[i+1] : i;
 
     ll ans = 0;
     rep(i, 0, n) {

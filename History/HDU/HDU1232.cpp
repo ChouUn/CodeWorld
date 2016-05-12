@@ -25,7 +25,7 @@ typedef long long       int64;
 #endif
 
 #define rep(i,a,n)  for (int i=a;i<n;i++)
-#define rrep(i,a,n) for (int i=n-1;i>=a;i--)
+#define per(i,a,n) for (int i=n-1;i>=a;i--)
 #define trv(i,n)    for (__typeof((n).end()) i=(n).begin(); i!=(n).end(); i++)
 #define pb(x)       push_back(x)
 #define mp(x,y)     make_pair(x,y)

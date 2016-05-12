@@ -47,7 +47,7 @@ int main() {
   fac[0] = 1;
   rep(i, 1, maxn) fac[i] = fac[i-1] * i % mod;
   inv[maxn-1] = csl::pow(1LL, fac[maxn-1], mod-2, mod);
-  rrep(i, 1, maxn) inv[i-1] = inv[i] * i % mod;
+  per(i, 1, maxn) inv[i-1] = inv[i] * i % mod;
 
   int _, __ = 0;
   for (scanf("%d", &_); _; _--) {

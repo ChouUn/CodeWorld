@@ -1,7 +1,7 @@
 /*
  *    Name : BC30A.cpp
  *    Author : CHN.ChouUn
- *    Date : 2015Äê2ÔÂ14ÈÕ ÏÂÎç7:00:18
+ *    Date : 2015ï¿½ï¿½2ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½7:00:18
  *    Copyright : www.fateud.com
  *    Email : ChouUnSoft@gmail.com
  *    Description : None
@@ -68,8 +68,8 @@ using namespace std;
 #define FOR(i,m,n)    for(int i=m;i!=(n+1-2*(n<m));i=i+1-2*(n<m))
 #define REP(i,n)     for(__typeof(n) i=0;i<(n);i++)
 #define REP1(i,n)     for(__typeof(n) i=1;i<=(n);i++)
-#define RREP(i,n)    for(__typeof(n) i=(n)-1;i>=0;i--)
-#define RREP1(i,n)    for(__typeof(n) i=(n);i>0;i--)
+#define per(i,n)    for(__typeof(n) i=(n)-1;i>=0;i--)
+#define per1(i,n)    for(__typeof(n) i=(n);i>0;i--)
 #define TRV(i,n)    for(type(n) i=(n).op;i!=(n).ed;i++)
 #define RTRV(i,n)    for(rtype(n) i=(n).rop;i!=(n).red;i++)
 //@ 64 Bit Integer for win/unix
