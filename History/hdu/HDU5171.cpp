@@ -1,12 +1,11 @@
 /*
-	Name: BC29B.cpp
+	Name: HDU5171.cpp
 	Author: CHN.ChouUn
 	Date: 2015年2月9日 下午4:02:03
 	Copyright: www.fateud.com
 	Email: ChouUnSoft@gmail.com
 	Description: None
 */
-
 #include <standard.h>
 #include <ModInt.h>
 #include <Matrix.h>
