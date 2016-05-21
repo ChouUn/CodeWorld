@@ -8,28 +8,6 @@
  *  Anti-Mage : The magic ends here.
  */
 
-/*
-There are several test cases,intergers n ,t and q (0<n<=100，1<=t<=5，q>0)
-in the first line which mean you own n kinds of skills ,
-and the "ResumingCirclet" helps you resume t points of MagicValue per second
-and q is of course the hurt points of LifeValue the Boss attack you each time
-(we assume when fighting in a second the attack you show is before the Boss).
-Then n lines follow,each has 2 intergers ai and bi(0<ai,bi<=100).
-which means using i skill costs you ai MagicValue and costs the Boss bi LifeValue.
-The last case is n=t=q=0.
-4 2 25
-10 5
-20 10
-30 28
-76 70
-4 2 25
-10 5
-20 10
-30 28
-77 70
-0 0 0
-*/
-
 const int N = 110;
 const int M = 100;
 int a[N], b[N];
@@ -53,7 +31,7 @@ int main() {
 
     int ans = -1;
     fill_n(f, N, -1); f[M] = 0;
-    for (int m = M, cnt = 1; m > 0; m -= q, ++cnt) {
+    for (int m = M, cnt = 1; m > 0 && !~ans; m -= q, ++cnt) {
       fill_n(g, N, -1);
       rep(k, 0, n) rep(i, a[k], M + 1) update(g[min(i - a[k] + p, M)], f[i], b[k]);
       swap(f, g);

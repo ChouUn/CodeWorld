@@ -29,7 +29,7 @@ namespace csl {
      * 2113929217   5
      * 2130706433   3
      */
-    ntt(T P, T g) : P(P), g(g ? g : csl::root(P)) {}
+    ntt(T P, T g = T()) : P(P), g(g ? g : csl::root(P)) {}
 
     ntt(size_type n) {
       for (P = (1 << n) + 1; ; P += 1 << n) {
