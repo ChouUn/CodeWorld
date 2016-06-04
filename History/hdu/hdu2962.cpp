@@ -16,7 +16,7 @@ const int N = 1010;
 #include <utility>
 #include <ext/pb_ds/priority_queue.hpp>
 
-namespace dijstra {
+namespace dijkstra {
   const int V = ::N;
   const int E = V * V * 2;
   const int oo = INT_MAX / 2;
@@ -45,7 +45,7 @@ namespace dijstra {
     return res->next = head[from], head[from] = res, res;
   }
 
-  inline void add_douple_edge(int from, int to, int cost, int lim) {
+  inline void add_double_edge(int from, int to, int cost, int lim) {
     add_edge(from, to, cost, lim);
     add_edge(to, from, cost, lim);
   }
@@ -80,24 +80,24 @@ int main() {
   for(int n, m; cin >> n >> m && n; --_, ++__) {
     if (__ != 1) cout << '\n';
     std::cout << "Case " << __ << ":\n";
-    dijstra::clear();
+    dijkstra::clear();
     while (m--) {
       int u, v, w, c; cin >> u >> v >> w >> c;
-      dijstra::add_douple_edge(u, v, c, w == -1 ? dijstra::oo : w);
+      dijkstra::add_double_edge(u, v, c, w == -1 ? dijkstra::oo : w);
     }
     int S, T, M; cin >> S >> T >> M;
     ll l = 0, r = M;
     while (l < r) {
       int m = (l + r + 1) / 2;
-      dijstra::solve(S, T, n + 1, m);
-      if (dijstra::dis[T] == dijstra::oo) r = m - 1;
+      dijkstra::solve(S, T, n + 1, m);
+      if (dijkstra::dis[T] == dijkstra::oo) r = m - 1;
       else l = m;
     }
 
-    dijstra::solve(S, T, n + 1, l);
-    if (dijstra::dis[T] == dijstra::oo) { cout << "cannot reach destination\n"; continue; }
+    dijkstra::solve(S, T, n + 1, l);
+    if (dijkstra::dis[T] == dijkstra::oo) { cout << "cannot reach destination\n"; continue; }
     cout << "maximum height = " << l << '\n';
-    cout << "length of shortest route = " << dijstra::dis[T] << '\n';
+    cout << "length of shortest route = " << dijkstra::dis[T] << '\n';
   }
   return 0;
 }

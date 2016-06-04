@@ -20,15 +20,15 @@ int main() {
   for(std::cin >> _; _; --_, ++__) {
     std::cout << "Case #" << __ <<": ";
     int n; ll k; cin >> n >> k;
-    rep(i, 1, n+1) {
+    rep(i, 1, n + 1) {
       ll in; cin >> in;
-      s[i] = s[i-1] + (i&1 ? in : -in);
+      s[i] = s[i - 1] + (i & 1 ? in : -in);
     }
 
     set<ll> ht;
     bool ans = false;
-    per(i, 0, n+1) {
-      ll x = s[i] + (i&1 ? -k : k);
+    per(i, 0, n + 1) {
+      ll x = s[i] + (i &1  ? -k : k);
       if(ht.count(x)) { ans = true; break; }
       ht.insert(s[i]);
     }

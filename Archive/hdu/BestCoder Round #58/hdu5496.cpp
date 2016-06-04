@@ -9,10 +9,10 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 100010
-#define mod 1000000007
-ll pow2[maxn];
-int a[maxn], d[maxn];
+#define N 100010
+#define P 1000000007
+ll pow2[N];
+int a[N], d[N];
 
 //@ Main Function
 int main() {
@@ -25,7 +25,7 @@ int main() {
     rep(i, 0, n) cin >> a[i];
 
     csl::discrete<int> b;
-    b.insert(a, a+n);
+    b.insert(a, a + n);
     b.build();
 
     int m = b.size();
@@ -33,10 +33,10 @@ int main() {
     ll ans = 0, cnt = 1;
     rep(i, 0, n) {
       int p = b.query(a[i]);
-      ll tmp = (cnt - d[p] + mod) % mod;
-      cnt = (cnt + pow2[i]) % mod;
-      d[p] = (d[p] + pow2[i]) % mod;
-      ans = (ans + tmp * a[i] % mod * pow2[n-1-i] % mod) % mod;
+      ll tmp = (cnt - d[p] + P) % P;
+      cnt = (cnt + pow2[i]) % P;
+      d[p] = (d[p] + pow2[i]) % P;
+      ans = (ans + tmp * a[i] % P * pow2[n - 1 - i] % P) % P;
     }
     cout << ans << endl;
   }

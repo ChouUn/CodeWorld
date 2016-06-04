@@ -10,6 +10,9 @@
 
 //@ Main Function
 int main() {
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+
   vector<ll> v;
   rep(i, 1, 63) {
     ll x = (1ll << i) - 1;

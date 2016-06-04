@@ -26,10 +26,10 @@ int main() {
   for(int n; cin >> n; --_, ++__) {
     rep(i, 0, n) {
       int x, y; cin >> x >> y;
-      a[i].del = x-y, a[i].snd = y, a[i].idx = i;
+      a[i].del = x - y, a[i].snd = y, a[i].idx = i;
     }
-    sort(a, a+n, node::cmp);
-    rep(i, 0, n) cout << a[i].idx << (i != n-1 ? ' ' : '\n');
+    sort(a, a + n, node::cmp);
+    rep(i, 0, n) cout << a[i].idx << (i != n - 1 ? ' ' : '\n');
   }
   return 0;
 }

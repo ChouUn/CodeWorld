@@ -9,10 +9,10 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned int uint;
 typedef unsigned long long ull;
-typedef std::pair<int,int> pii;
-typedef std::vector<int> vi;
-typedef std::vector<vi> vvi;
-typedef std::vector<pii> vpii;
+typedef std::pair< int, int > pii;
+typedef std::vector< int > vi;
+typedef std::vector< vi > vvi;
+typedef std::vector< pii > vpii;
 
 #define rep(i,a,b) for(auto i=a,i##_n=b;i<i##_n;++i)
 #define per(i,a,b) for(auto i=b,i##_n=a;i-->i##_n;)

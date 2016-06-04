@@ -7,64 +7,57 @@
 #include <vector>
 
 namespace csl {
-  template<typename _Tp = char,_Tp _FlagS = '@',_Tp _FlagD = '#',_Tp _FlagT =
-      '\0'>
-  struct manacher {
-    // template parameter.
-    typedef _Tp key_type;
+  template <typename T = char, T FlagS = '@', T FlagD = '#', T FlagT = '\0'>
+  class manacher {
+  public:
+    typedef T key_type;
     typedef int value_type;
     typedef std::size_t size_type;
 
-    void generate(const key_type* __src) {
-      m_dest.clear();
-      m_dest.push_back(_FlagS), m_dest.push_back(_FlagD);
-      for(size_type i = 0; __src[i] != _FlagT; i++)
-        m_dest.push_back(__src[i]), m_dest.push_back(_FlagD);
-      m_dest.push_back(_FlagT);
-      m_size = m_dest.size();
-    }
-
-    void calculate() {
-      m_data.resize(m_size);
-      for(int i = 1, j = 0, p = 0; i < m_size; ++i) {
-        register int k = (p > i) ? std::min(m_data[2 * j - i], p - i) : 1;
-        while(m_dest[i + k] == m_dest[i - k])
-          ++k;
-        if(k + i > p) p = k + i, j = i;
-        m_data[i] = k;
-      }
-    }
-
-    // capacity.
-    inline void build(const key_type* __src) {
-      generate(__src);
-      calculate();
+    inline void build(const key_type* src) {
+      generate(src), calculate();
     }
 
     size_type size() const {
-      return m_size - 4;
+      return dest.size() - 4;
     }
 
-    // element access.
+    value_type at(size_type x) {
+      return x + 2 < dest.size() ? this->operator[](x) : 0;
+    }
+
+    value_type operator [](size_type x) const {
+      return data[x + 2] - 1;
+    }
+
     value_type query() const {
-      value_type __res = value_type();
-      for(size_type i = 0; i < m_size; ++i)
-        if(m_data[i] > __res) __res = m_data[i];
-      return __res - 1;
+      value_type res = value_type();
+      for (size_type i = 0; i < dest.size(); ++i)
+        if (data[i] > res) res = data[i];
+      return res - 1;
     }
 
-    value_type at(size_type __x) {
-      return __x + 2 < m_size ? this->operator[](__x) : 0;
+  private:
+    std::vector< key_type > dest;
+    std::vector< value_type > data;
+
+    void generate(const key_type* src) {
+      dest.clear(), dest.push_back(FlagS), dest.push_back(FlagD);
+      for (size_type i = 0; src[i] != FlagT; i++)
+        dest.push_back(src[i]), dest.push_back(FlagD);
+      dest.push_back(FlagT);
     }
 
-    value_type operator [](size_type __x) const {
-      return m_data[__x + 2] - 1;
+    void calculate() {
+      data.resize(dest.size());
+      for (int i = 1, j = 0, p = 0; i < dest.size(); ++i) {
+        int k = (p > i) ? std::min(data[2 * j - i], p - i) : 1;
+        while (dest[i + k] == dest[i - k])
+          ++k;
+        if (k + i > p) p = k + i, j = i;
+        data[i] = k;
+      }
     }
-
-    // member variable.
-    std::vector<key_type> m_dest;
-    std::vector<value_type> m_data;
-    size_type m_size;
 
   };
 

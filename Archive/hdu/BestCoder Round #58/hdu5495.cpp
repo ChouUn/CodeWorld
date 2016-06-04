@@ -8,10 +8,10 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 100010
-int a[maxn], b[maxn];
-int c[maxn], d[maxn];
-bool v[maxn];
+#define N 100010
+int a[N], b[N];
+int c[N], d[N];
+bool v[N];
 
 //@ Main Function
 int main() {
@@ -20,9 +20,9 @@ int main() {
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ <<": ";
-    int n; scanf("%d", &n);
-    rep(i, 0, n) scanf("%d", a+i);
-    rep(i, 0, n) scanf("%d", b+i);
+    int n; cin >> n;
+    rep(i, 0, n) cin >> a[i];
+    rep(i, 0, n) cin >> b[i];
     rep(i, 0, n) c[a[i]] = i, d[b[i]] = i, v[i] = true;
     int ans = n;
     rep(i, 0, n) if(v[i]) {
@@ -31,7 +31,7 @@ int main() {
       while(f != e) v[c[f]] = false, f = b[c[f]], ++g;
       ans -= (g != 1);
     }
-    printf("%d\n", ans);
+    cout << ans << endl;
   }
   return 0;
 }

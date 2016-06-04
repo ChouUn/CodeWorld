@@ -18,8 +18,8 @@ int main() {
   int _, __ = 1;
   for(int n, m; cin >> n >> m; --_, ++__) {
     map<int,int> p;
-    rep(i, 1, n+1) cin >> tmp[i];
-    per(i, 1, n+1) {
+    rep(i, 1, n + 1) cin >> tmp[i];
+    per(i, 1, n + 1) {
       int& ref = p[tmp[i]];
       lnk[i] = ref, ref = i;
     }

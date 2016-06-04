@@ -8,8 +8,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 1010
-int a[maxn], b[maxn];
+#define N 1010
+int a[N], b[N];
 
 //@ Main Function
 int main() {
@@ -18,14 +18,14 @@ int main() {
   int _, __ = 1;
   for(std::cin >> _; _; --_, ++__) {
     //std::cout << "Case #" << __ <<": ";
-    int n, m; scanf("%d%d", &n, &m);
-    rep(i, 0, n) scanf("%d", a+i);
-    rep(i, 0, n) scanf("%d", b+i);
-    sort(a, a+n, less<int>());
-    sort(b, b+n, greater<int>());
+    int n, m; cin >> n >> m;
+    rep(i, 0, n) cin >> a[i];
+    rep(i, 0, n) cin >> b[i];
+    sort(a, a + n, less<int>());
+    sort(b, b + n, greater<int>());
     int ans = 0;
     rep(i, 0, m) ans += a[i] - b[i];
-    puts(ans > 0 ? "YES" : "NO");
+    cout << (ans > 0 ? "YES" : "NO") << endl;
   }
   return 0;
 }

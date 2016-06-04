@@ -8,8 +8,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 100010
-int n, a[maxn];
+#define N 100010
+int n, a[N];
 
 bool judge(int k) {
   int now = a[0] - k;

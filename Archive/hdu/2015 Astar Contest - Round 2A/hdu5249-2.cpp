@@ -10,8 +10,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 10010
-char op[maxn];
+#define N 10010
+char op[N];
 
 //@ Main Function
 int main() {
@@ -39,15 +39,15 @@ int main() {
       switch(op[i]) {
         case 'i':
           pos = v.query(u[++r]);
-          ft.update(pos+1, +1);
+          ft.update(pos + 1, +1);
           break;
         case 'o':
           pos = v.query(u[++l]);
-          ft.update(pos+1, -1);
+          ft.update(pos + 1, -1);
           break;
         case 'q':
-          pos = csl::search(ft, (r-l)/2+1);
-          cout << v[pos-1] << '\n';
+          pos = csl::search(ft, (r - l)/2+1);
+          cout << v[pos - 1] << '\n';
           break;
       }
   }

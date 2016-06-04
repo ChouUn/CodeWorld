@@ -28,7 +28,6 @@ int main() {
     int l = i, r = i, cnt = 0; ll sum = 0;
     while (r != n) {
       int q = p.query(l, r);
-//      cout << l << " " << r << " " << q << endl;
       if (b[r] == 0 || b[r] != q) {
         b[r] = q;
         c[r] = cnt;

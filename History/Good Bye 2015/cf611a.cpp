@@ -19,8 +19,8 @@ int main() {
   string s; cin >> s >> s;
 
   int z = 4, ans = 0;
-  rep(i, 1, 13) rep(j, 1, f[i]+1)
-    ans += (s == "week") ? ((z = z % 7 + 1) == x) : (j == x);
+  rep(i, 1, 13) rep(j, 1, f[i] + 1)
+    ans += (s == "week") ? (z = z % 7 + 1) == x : j == x;
   cout << ans << endl;
 
   return 0;

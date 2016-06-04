@@ -5,7 +5,7 @@
 #include <vector>
 #include <algorithm>
 namespace csl {
-  template<typename _Tp>
+  template <typename _Tp>
   struct discrete {
     typedef std::size_t size_type;
 
@@ -32,12 +32,12 @@ namespace csl {
     inline void insert(_Tp __x) {
       data.push_back(__x);
     }
-    template<typename _InputIterator>
-    inline void insert(_InputIterator first,_InputIterator last) {
+    template <typename _InputIterator>
+    inline void insert(_InputIterator first, _InputIterator last) {
       data.insert(data.end(), first, last);
     }
 
-    std::vector<_Tp> data;
+    std::vector< _Tp > data;
   };
 } // namespace csl
 

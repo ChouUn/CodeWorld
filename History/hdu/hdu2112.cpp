@@ -15,7 +15,7 @@ const int N = 210;
 #include <utility>
 #include <ext/pb_ds/priority_queue.hpp>
 
-namespace dijstra {
+namespace dijkstra {
   const int V = ::N;
   const int E = V * V * 2;
   const int oo = INT_MAX / 2;
@@ -44,7 +44,7 @@ namespace dijstra {
     return res->next = head[from], head[from] = res, res;
   }
 
-  inline void add_douple_edge(int from, int to, int cost) {
+  inline void add_double_edge(int from, int to, int cost) {
     add_edge(from, to, cost);
     add_edge(to, from, cost);
   }
@@ -89,14 +89,14 @@ int main() {
     //std::cout << "Case #" << __ << ": ";
     s.clear();
     int S = in(), T = in();
-    dijstra::clear();
+    dijkstra::clear();
     while (n--) {
       int u = in(), v = in(), w; cin >> w;
-      dijstra::add_douple_edge(u, v, w);
+      dijkstra::add_double_edge(u, v, w);
     }
-    dijstra::solve(S, T, s.size());
-    int ans = dijstra::dis[T];
-    cout << (ans == dijstra::oo ? -1 : ans) << '\n';
+    dijkstra::solve(S, T, s.size());
+    int ans = dijkstra::dis[T];
+    cout << (ans == dijkstra::oo ? -1 : ans) << '\n';
   }
   return 0;
 }

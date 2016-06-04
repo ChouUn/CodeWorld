@@ -26,7 +26,7 @@ namespace csl {
    */
   template <typename T>
   inline T gcd(T a, T b) {
-    for(T c = T(); !!b;)
+    for (T c = T(); !!b;)
       c = a % b, a = std::move(b), b = std::move(c);
     return a;
   }
@@ -36,7 +36,7 @@ namespace csl {
    */
   template <typename T>
   T gcd(const T& a, const T& b, T& x, T& y) {
-    if(!b) return x = 1, y = 0, a;
+    if (!b) return x = 1, y = 0, a;
     T r = gcd(b, a % b, y, x);
     return y = y - a / b * x, r;
   }
@@ -54,8 +54,8 @@ namespace csl {
    */
   template <typename V, typename K, typename M, typename F1, typename F2>
   inline V dnc(V c, V n, K k, M m, const F1& op1, const F2& op2) {
-    for(n = op2(n, m); !!k; n = op2(op1(n, n), m), k >>= 1)
-      if(k & 1) c = op2(op1(c, n), m);
+    for (n = op2(n, m); !!k; n = op2(op1(n, n), m), k >>= 1)
+      if (k & 1) c = op2(op1(c, n), m);
     return c;
   }
 
@@ -64,8 +64,8 @@ namespace csl {
    */
   template <typename V, typename K, typename F>
   inline V dnc(V c, V n, K k, const F& op) {
-    for(; k; n = op(n, n), k >>= 1)
-      if(k & 1) c = op(c, n);
+    for (; k; n = op(n, n), k >>= 1)
+      if (k & 1) c = op(c, n);
     return c;
   }
 
@@ -74,7 +74,7 @@ namespace csl {
    */
   template <typename V>
   inline V mul(V a, V b, const V m) {
-    return dnc(V(), a, b, m, std::plus<V>(), std::modulus<V>());
+    return dnc(V(), a, b, m, std::plus< V >(), std::modulus< V >());
   }
 
   /**
@@ -82,7 +82,7 @@ namespace csl {
    */
   template <typename V, typename K>
   inline V pow(V c, V n, const K k) {
-    return dnc(c, n, k, std::multiplies<V>());
+    return dnc(c, n, k, std::multiplies< V >());
   }
 
   /**
@@ -90,7 +90,7 @@ namespace csl {
    */
   template <typename V, typename K>
   inline V pow(V c, V n, const K k, V m) {
-    return dnc(c, n, k, m, std::multiplies<V>(), std::modulus<V>());
+    return dnc(c, n, k, m, std::multiplies< V >(), std::modulus< V >());
   }
 
   /**
@@ -103,12 +103,18 @@ namespace csl {
   }
 
   template <typename V>
-  inline std::vector<V> divide(V x) {
-    std::vector<V> res;
-    if (x % 2 == 0) { res.push_back(2); while (x % 2 == 0) x >>= 1; }
+  inline std::vector< V > divide(V x) {
+    std::vector< V > res;
+    if (x % 2 == 0) {
+      res.push_back(2);
+      while (x % 2 == 0)
+        x >>= 1;
+    }
     for (V i(3); i * i <= x; i += 2) {
       if (x % i) continue;
-      res.push_back(i); while (x % i == 0) x /= i;
+      res.push_back(i);
+      while (x % i == 0)
+        x /= i;
     }
     if (x != V(1)) res.push_back(x);
     return res;
@@ -119,11 +125,14 @@ namespace csl {
    */
   template <typename V>
   inline V root(const V& P) {
-    std::vector<V> p = csl::divide(P - 1);
+    std::vector< V > p = csl::divide(P - 1);
     for (V g = 2; g < P; ++g) {
       bool flag = true;
       for (auto i = p.begin(); i != p.end(); ++i)
-        if (csl::pow(V(1), g, (P - 1) / *i, P) == 1) { flag = false; break; }
+        if (csl::pow(V(1), g, (P - 1) / *i, P) == 1) {
+          flag = false;
+          break;
+        }
       if (flag) return g;
     }
     return -1;

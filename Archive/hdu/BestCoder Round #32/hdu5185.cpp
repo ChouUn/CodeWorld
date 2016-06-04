@@ -23,11 +23,11 @@ int main() {
     ll ans = 0;
     memset(dp[0], 0x00, sizeof(dp[0]));
     dp[0][0] = 1;
-    rep(i, 1, (int)sqrt(n<<1)+1) {
-      memset(dp[i&1], 0x00, sizeof(dp[i&1]));
-      rep(j, i, n+1)
-        dp[i&1][j] = (dp[i&1][j-i] + dp[(i&1)^1][j-i]) % mod;
-      ans = (ans + dp[i&1][n]) % mod;
+    rep(i, 1, (int)sqrt(n << 1) + 1) {
+      memset(dp[i & 1], 0x00, sizeof(dp[i & 1]));
+      rep(j, i, n + 1)
+        dp[i & 1][j] = (dp[i & 1][j - i] + dp[(i & 1) ^ 1][j - i]) % mod;
+      ans = (ans + dp[i & 1][n]) % mod;
     }
     cout << ans << endl;
   }

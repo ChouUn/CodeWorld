@@ -56,8 +56,8 @@ namespace overall_dnc {
     }
 
     int p = b1.size(), q = b2.size();
-    for (int i = 0; i < p; ++i) ptr[l+i] = b1[i];
-    for (int i = 0; i < q; ++i) ptr[l+p+i] = b2[i];
+    for (int i = 0; i < p; ++i) ptr[l + i] = b1[i];
+    for (int i = 0; i < q; ++i) ptr[l + p + i] = b2[i];
     solve(l, l + p, lo, mi);
     solve(l + p, r, mi + 1, up);
   }

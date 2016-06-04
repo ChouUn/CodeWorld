@@ -8,8 +8,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 10010
-ll a[maxn];
+#define N 10010
+ll a[N];
 
 //@ Main Function
 int main() {
@@ -21,19 +21,19 @@ int main() {
 
     int n; ll m, k; cin >> n >> m >> k;
     rep(i, 0, n) cin >> a[i];
-    sort(a, a+n);
+    sort(a, a + n);
 
     int idx = -1;
     rep(i, 0, n) if(a[i] > m) break; else idx = i;
     if (~idx) {
-      for(int tmp = idx; k && idx != n-1; k--, idx = tmp) {
-        rep(i, idx+1, n)
+      for(int tmp = idx; k && idx != n - 1; k--, idx = tmp) {
+        rep(i, idx + 1, n)
           if(a[i] > a[idx] + max(k, 0ll)) break;
           else tmp = i;
         if(tmp == idx) break;
       }
     }
-    cout << (idx != n-1 ? "madan!" : "why am I so diao?") << '\n';
+    cout << (idx != n - 1 ? "madan!" : "why am I so diao?") << '\n';
   }
   return 0;
 }

@@ -9,8 +9,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 100010
-int a[maxn];
+#define N 100010
+int a[N];
 
 //@ Main Function
 int main() {
@@ -32,11 +32,11 @@ int main() {
     }
 
     ll ans = cnt;
-    rep(i, 0, n-m) {
+    rep(i, 0, n - m) {
       cnt += f.query(n) - f.query(a[i]) + g.query(a[i] - 1);
       f.update(a[i], +1);
-      cnt -= f.query(n) - f.query(a[i+m]) + g.query(a[i+m] - 1);
-      g.update(a[i+m], -1);
+      cnt -= f.query(n) - f.query(a[i + m]) + g.query(a[i + m] - 1);
+      g.update(a[i + m], -1);
       ans = min(ans, cnt);
     }
     cout << ans << endl;

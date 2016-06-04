@@ -4,9 +4,9 @@
 #include <utility>
 #include <ext/pb_ds/priority_queue.hpp>
 
-namespace dijstra {
-  const int V = ::N;
-  const int E = V * V * 2;
+namespace dijkstra {
+  const int V;
+  const int E;
   const int oo = INT_MAX / 2;
 
   typedef std::pair<int,int> pii;
@@ -33,7 +33,7 @@ namespace dijstra {
     return res->next = head[from], head[from] = res, res;
   }
 
-  inline void add_douple_edge(int from, int to, int cost) {
+  inline void add_double_edge(int from, int to, int cost) {
     add_edge(from, to, cost);
     add_edge(to, from, cost);
   }

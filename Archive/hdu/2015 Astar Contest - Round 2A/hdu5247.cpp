@@ -10,8 +10,8 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 10010
-int a[maxn], b[maxn];
+#define N 10010
+int a[N], b[N];
 
 //@ Main Function
 int main() {
@@ -23,9 +23,8 @@ int main() {
     rep(i, 0, n) cin >> a[i];
 
     map<int,int> p;
-    map<int,int>::iterator it;
     rep(i, 0, n) {
-      it = p.find(a[i]);
+      auto it = p.find(a[i]);
       b[i] = (it == p.end()) ? -1 : it->second;
       p[a[i]] = i;
     }
@@ -37,11 +36,11 @@ int main() {
     while (m--) {
       int k; cin >> k;
       int ans = 0;
-      rep(i, 0, n-k+1) {
-        int x = st1.query(i, i+k-1);
-        int y = st2.query(i, i+k-1);
+      rep(i, 0, n - k + 1) {
+        int x = st1.query(i, i + k - 1);
+        int y = st2.query(i, i + k - 1);
         if(y - x + 1 != k) continue;
-        int z = st3.query(i, i+k-1);
+        int z = st3.query(i, i + k - 1);
         if(z >= i) continue;
         ++ans;
       }

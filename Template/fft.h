@@ -12,21 +12,24 @@
 #endif
 
 namespace csl {
-  template< typename _Tp = double >
+  template <typename _Tp = double>
   class fft {
   public:
     typedef _Tp value_type;
-    typedef std::complex<value_type> node;
+    typedef std::complex< value_type > node;
     typedef std::size_t size_type;
-    typedef std::vector<value_type> container;
+    typedef std::vector< value_type > container;
 
-    container operator () (const container& u, const container& v) const {
+    container operator ()(const container& u, const container& v) const {
       size_type n = StripLeadingZero(u), m = StripLeadingZero(v);
       size_type d = n + m - 1, s = 1;
-      while (s < d) s <<= 1;
-      std::vector<node> w(s);
-      for (size_type i = 0; i < n; ++i) w[i].real(u[i]);
-      for (size_type i = 0; i < m; ++i) w[i].imag(v[i]);
+      while (s < d)
+        s <<= 1;
+      std::vector< node > w(s);
+      for (size_type i = 0; i < n; ++i)
+        w[i].real(u[i]);
+      for (size_type i = 0; i < m; ++i)
+        w[i].imag(v[i]);
 
       this->operator()(w, 0);
       w[0] = w[0].real() * w[0].imag();
@@ -40,15 +43,18 @@ namespace csl {
       this->operator()(w, 1);
 
       container res(d);
-      for (size_type i = 0; i < d; ++i) res[i] = w[i].real();
+      for (size_type i = 0; i < d; ++i)
+        res[i] = w[i].real();
       return res.resize(StripLeadingZero(res)), std::move(res);
     }
 
-    void operator () (std::vector<node>& v, bool inv) const {
-      int n = v.size(); node* a = v.data();
+    void operator ()(std::vector< node >& v, bool inv) const {
+      int n = v.size();
+      node* a = v.data();
       for (int i = 1, j, t, k; i < n; ++i) {
-        for (j = 0, t = i, k = n >> 1; k; k >>= 1, t >>= 1) j = (j << 1) | (t & 1);
-        if (i < j) swap(a[i], a[j]) ;
+        for (j = 0, t = i, k = n >> 1; k; k >>= 1, t >>= 1)
+          j = (j << 1) | (t & 1);
+        if (i < j) swap(a[i], a[j]);
       }
       for (int s = 2, ds = 1; s <= n; ds = s, s <<= 1) {
         _Tp wo = (inv ? -1 : 1) * 2 * M_PI / s;
@@ -57,12 +63,14 @@ namespace csl {
           for (int i = k; i < n; i += s)
             a[i + ds] = a[i] - (t = w * a[i + ds]), a[i] += t;
       }
-      if (inv) for (size_type i = 0; i < n; ++i) a[i] /= n;
+      if (inv) for (size_type i = 0; i < n; ++i)
+        a[i] /= n;
     }
 
     static size_type StripLeadingZero(const container& value) {
       size_type n = value.size();
-      while (n > 1 && value[n - 1] < .5) --n;
+      while (n > 1 && value[n - 1] < .5)
+        --n;
       return n;
     }
   };

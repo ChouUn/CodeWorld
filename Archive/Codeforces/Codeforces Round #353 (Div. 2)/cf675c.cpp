@@ -18,12 +18,10 @@ int main() {
   int n; cin >> n;
   rep(i, 1, n + 1) cin >> a[i];
 
-  ll cnt = 0;
   map<ll,int> m;
-  rep(i, 1, n + 1) {
-    cnt += a[i];
-    m[cnt]++;
-  }
+  ll cnt = 0;
+  rep(i, 1, n + 1) ++m[cnt += a[i]];
+
   int ans = n - 1;
   for (auto &mi : m) ans = min(ans, n - mi.second);
   cout << ans << endl;

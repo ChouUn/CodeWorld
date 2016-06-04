@@ -8,9 +8,9 @@
  *  Anti-Mage : The magic ends here.
  */
 
-#define maxn 48
+const int N = 48;
 
-const int g[6][maxn] = {
+const int g[6][N] = {
   {5,3,0,6,1,7,4,2,8,9,42,11,44,13,14,47,16,17,18,19,20,21,22,23,39,25,
       26,36,28,34,30,31,32,33,10,35,12,37,38,15,40,41,29,43,27,45,46,24,},
   {37,1,2,38,4,39,6,7,13,11,8,14,9,15,12,10,16,17,40,19,41,21,22,42,24,
@@ -26,11 +26,11 @@ const int g[6][maxn] = {
 };
 
 char c[110];
-int s[maxn], t[maxn], v[maxn];
+int s[N], t[N], v[N];
 int *p = s, *q = t;
 
 void trans(const int func[]) {
-  rep(i, 0, maxn) q[i] = p[func[i]];
+  rep(i, 0, N) q[i] = p[func[i]];
   swap(p, q);
 }
 
@@ -48,7 +48,7 @@ int main() {
   for(std::cin >> _; _; --_, ++__) {
     std::cout << "Case #" << __ <<":\n";
 
-    rep(i, 0, maxn) p[i] = i;
+    rep(i, 0, N) p[i] = i;
     cin >> c;
     for(char* ch = c; *ch; ++ch) {
       int type, time = 1;
@@ -68,8 +68,8 @@ int main() {
     }
 
     int ans = 1;
-    rep(i, 0, maxn) v[i] = 0;
-    rep(i, 0, maxn) if(!v[i]) {
+    rep(i, 0, N) v[i] = 0;
+    rep(i, 0, N) if(!v[i]) {
       int x = dfs(i, i);
       if(x == 1) continue;
       ans = ans / __gcd(ans, x) * x;
