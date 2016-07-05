@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      1.04
+// @version      1.05
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
@@ -58,21 +58,21 @@
   $(".problemsetList").add(".list").find("a").filter(function() {
     // check tag <a> have urls of known users
     var href = $(this).attr("href");
-    if (href === null) return false;
+    if (!href) return false;
     var result = userid_re.exec(href);
-    if (result === null) return false;
+    if (!result) return false;
     var userid = result[1];
-    if (userid === null || userid === undefined) return false;
+    if (!userid) return false;
     var realname = dict[userid];
-    if (realname === null || realname === undefined) return false;
+    if (!realname) return false;
 
     // write data in tag <a>
     $(this).data("userid", userid);
     return true;
   }).each(function() {
     // inject realname into tag <font>
-    var userid = $(this).data("userid");
-    var realname = dict[userid];
+    var userid = $(this).data("userid"),
+        realname = dict[userid];
     $("font", this).append("(" + realname + ")");
     console.log('[ZSH] add realname ' + realname + ' for user ' + userid + ' is succussful.');
   });
@@ -81,23 +81,21 @@
     // create problems array
     var arrs = [];
     $("tr:eq(0)", this).each(function() {
-      $(".ranklistProblem", this).each(function() {
-        arrs.push([]);
-      });
+      $(".ranklistProblem", this).each(() => arrs.push([]));
     });
     if (arrs.length === 0) return;
 
     // divide data from rows to cols into arrs
     $("tr:gt(0)", this).each(function() {
       var userid = $(".ranklistUser>a", this).data("userid");
-      if (userid === null || userid === undefined) return;
+      if (!userid) return;
       $(".ranklistProblem", this).each(function(index) {
         var data = $(this).html();
-        if (data === null || data === undefined) return;
+        if (!data) return;
         var result = score_re.exec(data);
-        if (result === null || result === undefined) return;
+        if (!result) return;
         var score = result[1];
-        if (score === null || score === undefined) return;
+        if (!score) return;
         score = Number(score);
         console.log([index, userid, score, this]);
         arrs[index].push([userid, score, this]);
@@ -106,40 +104,31 @@
 
     // traverse each problem
     _.each(arrs, function(arr, index, list) {
-      // group by score
-      var data = _.groupBy(arr, function(element) {
-        return element[1];
-      });
-      // set data "score" of each tag <td>
-      var score = 100;
+      // group by score and set data "score" of each tag <td>
+      var data = _.groupBy(arr, (element) => element[1]),
+          score = 100;
       _.each(data, function(value, key, list) {
-        _.each(value, function(element, index, list) {
-          $(element[2]).data("score", score);
-        });
-        score = (score > 60) ? score - 5 : score;
+        _.each(value, (element) => $(element[2]).data("score", score));
+        score = (score > 60 ? score - 5 : score);
       });
     });
 
     // display all scores
     $("tr:gt(0)", this).each(function() {
       var userid = $(".ranklistUser>a", this).data("userid");
-      if (userid === null || userid === undefined) return;
-
-      var count = 0, logs = [];
+      if (!userid) return;
+      // generate a report into console
+      var logs = [];
       $(".ranklistProblem", this).each(function(index) {
         var score = $(this).data("score");
-        if (score === null || score === undefined) {
-          logs.push(0);
-          return;
-        }
-        count += score = Number(score);
-        logs.push(score);
+        logs.push(score = !score ? 0 : Number(score));
+        if (score === 0) return;
         $(this).append(" <b style=\"color: red;\">" + score + "</b>");
       });
-      logs.unshift(count);
+      logs.unshift(_.reduce(logs, (memo, num) => memo + num, 0));
       logs.unshift(dict[userid]);
       console.log(logs);
-      $(".ranklistSolved", this).append(" <b style=\"color: red;\">" + count + "</b>");
+      $(".ranklistSolved", this).append(" <b style=\"color: red;\">" + logs[1] + "</b>");
     });
 
   });
