@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      0.11
+// @version      0.12
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
@@ -50,12 +50,12 @@
     "2650":"王苗苗",
   };
   console.log('[ZSH] ZJU Summer Helper is running.');
-  console.log(JSON.stringify(dict));
   $("td>a").each(function() {
     var href = $(this).attr("href");
     var userId = href.substr(-4, 4);
     if (dict[userId] !== undefined && dict[userId] !== null) {
       $("font", this).append("(" + dict[userId] + ")");
+      console.log('[ZSH] add ' + dict[userId] + ' is succussful.');
     }
   });
 })();
