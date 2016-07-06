@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      1.10
+// @version      1.11
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
@@ -45,14 +45,6 @@
     "2640": "张璇",
     "2641": "徐洁岑",
     "2642": "刘征宇",
-    "2643": "",
-    "2644": "",
-    "2645": "",
-    "2646": "",
-    "2647": "",
-    "2648": "",
-    "2649": "徐鹏",
-    "2650": "王苗苗",
   };
 
   $(".problemsetList").add(".list").find("a").filter(function() {
