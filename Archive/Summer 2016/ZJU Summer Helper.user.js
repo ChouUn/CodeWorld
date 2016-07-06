@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      1.05
+// @version      1.10
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
@@ -81,7 +81,9 @@
     // create problems array
     var arrs = [];
     $("tr:eq(0)", this).each(function() {
-      $(".ranklistProblem", this).each(() => arrs.push([]));
+      $(".ranklistProblem", this).each(function() {
+        arrs.push([]);
+      });
     });
     if (arrs.length === 0) return;
 
@@ -105,10 +107,14 @@
     // traverse each problem
     _.each(arrs, function(arr, index, list) {
       // group by score and set data "score" of each tag <td>
-      var data = _.groupBy(arr, (element) => element[1]),
+      var data = _.groupBy(arr, function(element) {
+            return element[1];
+          }),
           score = 100;
       _.each(data, function(value, key, list) {
-        _.each(value, (element) => $(element[2]).data("score", score));
+        _.each(value, function(element) {
+          $(element[2]).data("score", score);
+        });
         score = (score > 60 ? score - 5 : score);
       });
     });
@@ -125,7 +131,7 @@
         if (score === 0) return;
         $(this).append(" <b style=\"color: red;\">" + score + "</b>");
       });
-      logs.unshift(_.reduce(logs, (memo, num) => memo + num, 0));
+      logs.unshift(_.reduce(logs, function(memo, num) { return memo + num; }, 0));
       logs.unshift(dict[userid]);
       console.log(logs);
       $(".ranklistSolved", this).append(" <b style=\"color: red;\">" + logs[1] + "</b>");

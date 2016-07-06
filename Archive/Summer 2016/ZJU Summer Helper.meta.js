@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      1.05
+// @version      1.10
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
