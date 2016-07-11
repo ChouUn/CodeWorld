@@ -12,8 +12,8 @@ namespace csl {
 #define long long long
   class BigInt {
   public:
-    typedef std::uint32_t uint;
-    typedef std::uint64_t ulong;
+    typedef unsigned int uint;
+    typedef long unsigned int ulong;
     typedef std::vector< uint > container;
     typedef BigInt _Self;
 
