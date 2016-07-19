@@ -88,9 +88,9 @@ namespace csl {
     std::vector< _Node > data;
     size_type m_size;
 
-    void _add_edge(size_type from, size_type to, const value_type& data) {
+    void _add_edge(size_type from, size_type to, const value_type& value) {
       _Link node = data.data() + m_size++;
-      *node = _Node(0, impl[from], from, to, data);
+      *node = _Node(0, impl[from], from, to, value);
       if (impl[from]) impl[from]->prev = node;
       impl[from] = node;
     }
@@ -158,7 +158,7 @@ namespace csl {
   public:
     void scc(graph< _Tp >& __map) {
       map = &__map;
-      size_type __n = map->m_impl.size();
+      size_type __n = map->impl.size();
       idx = 0;
       cnt = 0;
       sta.reserve(__n);
@@ -173,7 +173,7 @@ namespace csl {
 
     void dcc(graph< _Tp >& __map) {
       map = &__map;
-      size_type __n = map->m_impl.size();
+      size_type __n = map->impl.size();
       idx = 0;
       cnt = 0;
       sta.reserve(__n);

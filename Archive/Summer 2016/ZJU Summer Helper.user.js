@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZJU Summer Helper
-// @version      1.11
+// @version      1.20
 // @description  try to take over the world!
 // @icon         http://fateud.com/img/favicon.ico
 // @namespace    http://fateud.com/
@@ -34,7 +34,7 @@
     "2629": "颜姜哲",
     "2630": "杨嘉诚",
     "2631": "姚弢",
-    "2632": "邬立东",
+    "2632": "***邬立东***",
     "2633": "陈哲凡",
     "2634": "吕莉",
     "2635": "管佳一",
@@ -45,6 +45,10 @@
     "2640": "张璇",
     "2641": "徐洁岑",
     "2642": "刘征宇",
+    "2647": "欧阳逸飞",
+    "2648": "***陈则伦***",
+    "2649": "***徐鹏***",
+    "2650": "***王苗苗***",
   };
 
   $(".problemsetList").add(".list").find("a").filter(function() {
@@ -65,7 +69,7 @@
     // inject realname into tag <font>
     var userid = $(this).data("userid"),
         realname = dict[userid];
-    $("font", this).append("(" + realname + ")");
+    $("font", this).append("<b style=\"color: black;\">(" + realname + ")</b>");
     console.log('[ZSH] add realname ' + realname + ' for user ' + userid + ' is succussful.');
   });
 
@@ -113,6 +117,7 @@
 
     // display all scores
     $("tr:gt(0)", this).each(function() {
+      return;
       var userid = $(".ranklistUser>a", this).data("userid");
       if (!userid) return;
       // generate a report into console
