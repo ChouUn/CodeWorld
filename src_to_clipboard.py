@@ -10,7 +10,7 @@ std_files = [
   'utility','valarray','vector','array','atomic','chrono','condition_variable',
   'forward_list','future','initializer_list','mutex','random','ratio','regex',
   'scoped_allocator','system_error','thread','tuple','typeindex','type_traits',
-  'unordered_map','unordered_set', 
+  'unordered_map','unordered_set',
 ]
 
 src_dir = "src/"
@@ -19,22 +19,26 @@ head_dir = "Template/"
 import os
 import codecs
 for root, dirs, files in os.walk(src_dir):
-    src_name = src_dir + files[0]
-    src_file = codecs.open(src_name, 'r', 'utf-8')
+    if len(files) == 0: continue
+    src_file = codecs.open(src_dir + files[0], 'r', 'utf-8')
     break
+
+try :
+    type (eval('src_file')) 
+except :
+    exit(0)
 
 import re
 heads = set()
 output = ""
 for line in src_file:
-    m = re.match(r'^(#include[ ]*<)([\w.]+)(>[ ]*)$', line)
+    m = re.match(r'^(#include *<)([\w\.]+)', line)
     if not m:
         output += line
         continue
 
     head_name = m.group(2)
-    if head_name in heads:
-        continue
+    if head_name in heads: continue
     heads.add(head_name)
 
     if head_name in std_files:

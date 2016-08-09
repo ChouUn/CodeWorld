@@ -1,2 +1,2 @@
-cd /D D:\Users\Documents\WorkSpaceCpp\CodeWorld
+cd /D %~dp0
 python ./src_to_clipboard.py
